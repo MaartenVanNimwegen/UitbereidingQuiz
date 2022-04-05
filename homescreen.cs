@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace UitbereidingQuiz
 {
-    public partial class Form1 : Form
+    public partial class homescreen : Form
     {
-        public Form1()
+        public homescreen()
         {
             InitializeComponent();
         }
+
     }
 }
