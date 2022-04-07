@@ -17,5 +17,9 @@ namespace UitbereidingQuiz
             InitializeComponent();
         }
 
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
