@@ -46,16 +46,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customquizconfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customquizconfig.Designer.cs">
+      <DependentUpon>customquizconfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseSettings.cs" />
     <Compile Include="homescreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="homescreen.Designer.cs">
       <DependentUpon>homescreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="naaminvullen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="naaminvullen.Designer.cs">
+      <DependentUpon>naaminvullen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="naaminvullenVs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="naaminvullenVs.Designer.cs">
+      <DependentUpon>naaminvullenVs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scores.Designer.cs">
+      <DependentUpon>scores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vraagbeheer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vraagbeheer.Designer.cs">
+      <DependentUpon>vraagbeheer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="customquizconfig.resx">
+      <DependentUpon>customquizconfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homescreen.resx">
       <DependentUpon>homescreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="naaminvullen.resx">
+      <DependentUpon>naaminvullen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="naaminvullenVs.resx">
+      <DependentUpon>naaminvullenVs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +107,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="scores.resx">
+      <DependentUpon>scores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vraagbeheer.resx">
+      <DependentUpon>vraagbeheer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

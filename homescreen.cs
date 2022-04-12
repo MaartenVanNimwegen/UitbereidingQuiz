@@ -21,5 +21,35 @@ namespace UitbereidingQuiz
         {
             Close();
         }
+        
+        private void QuickplayLable_Click(object sender, EventArgs e)
+        {
+            naaminvullen myForm = new naaminvullen();
+            myForm.Show();
+        }
+
+        private void CustomQuizLable_Click(object sender, EventArgs e)
+        {
+            customquizconfig myForm = new customquizconfig();
+            myForm.Show();
+        }
+
+        private void EenVsEenLable_Click(object sender, EventArgs e)
+        {
+            naaminvullenVs myForm = new naaminvullenVs();
+            myForm.Show();
+        }
+
+        private void VraagBeheerLable_Click(object sender, EventArgs e)
+        {
+            vraagbeheer myForm = new vraagbeheer();
+            myForm.Show();
+        }
+
+        private void ScoresLable_Click(object sender, EventArgs e)
+        {
+            scores myForm = new scores();
+            myForm.Show();
+        }
     }
 }
