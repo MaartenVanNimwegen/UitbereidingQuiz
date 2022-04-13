@@ -58,10 +58,9 @@ namespace UitbereidingQuiz
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1004, 10);
+            this.label4.Size = new System.Drawing.Size(986, 8);
             this.label4.TabIndex = 71;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -72,11 +71,11 @@ namespace UitbereidingQuiz
             this.VraagLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
             this.VraagLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VraagLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.VraagLable.Location = new System.Drawing.Point(10, 9);
+            this.VraagLable.Location = new System.Drawing.Point(8, 7);
             this.VraagLable.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.VraagLable.Name = "VraagLable";
             this.VraagLable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.VraagLable.Size = new System.Drawing.Size(1004, 73);
+            this.VraagLable.Size = new System.Drawing.Size(986, 59);
             this.VraagLable.TabIndex = 68;
             this.VraagLable.Text = "Vragenbeheer";
             this.VraagLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,10 +106,10 @@ namespace UitbereidingQuiz
             this.CancelBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CancelBtn.BackgroundImage")));
             this.CancelBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CancelBtn.Location = new System.Drawing.Point(22, 28);
-            this.CancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CancelBtn.Location = new System.Drawing.Point(16, 23);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(43, 38);
+            this.CancelBtn.Size = new System.Drawing.Size(32, 31);
             this.CancelBtn.TabIndex = 70;
             this.CancelBtn.TabStop = false;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
@@ -154,8 +153,8 @@ namespace UitbereidingQuiz
             this.VragenGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.VragenGrid.EnableHeadersVisualStyles = false;
             this.VragenGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
-            this.VragenGrid.Location = new System.Drawing.Point(12, 106);
-            this.VragenGrid.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.VragenGrid.Location = new System.Drawing.Point(9, 86);
+            this.VragenGrid.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.VragenGrid.MultiSelect = false;
             this.VragenGrid.Name = "VragenGrid";
             this.VragenGrid.ReadOnly = true;
@@ -179,7 +178,7 @@ namespace UitbereidingQuiz
             this.VragenGrid.ShowCellToolTips = false;
             this.VragenGrid.ShowEditingIcon = false;
             this.VragenGrid.ShowRowErrors = false;
-            this.VragenGrid.Size = new System.Drawing.Size(1000, 574);
+            this.VragenGrid.Size = new System.Drawing.Size(983, 527);
             this.VragenGrid.TabIndex = 72;
             // 
             // id
@@ -244,16 +243,17 @@ namespace UitbereidingQuiz
             // 
             // vraagbeheer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(1024, 690);
+            this.ClientSize = new System.Drawing.Size(1001, 622);
             this.ControlBox = false;
             this.Controls.Add(this.VragenGrid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.VraagLable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "vraagbeheer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "vraagbeheer";

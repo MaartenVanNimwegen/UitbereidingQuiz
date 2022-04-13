@@ -73,6 +73,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resultaten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resultaten.Designer.cs">
+      <DependentUpon>resultaten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resultatenvs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resultatenvs.Designer.cs">
+      <DependentUpon>resultatenvs.cs</DependentUpon>
+    </Compile>
     <Compile Include="scores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="resultaten.resx">
+      <DependentUpon>resultaten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resultatenvs.resx">
+      <DependentUpon>resultatenvs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="scores.resx">
       <DependentUpon>scores.cs</DependentUpon>
     </EmbeddedResource>

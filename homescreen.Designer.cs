@@ -37,9 +37,10 @@ namespace UitbereidingQuiz
             this.VraagBeheerLable = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.GeleBalkLable = new System.Windows.Forms.Label();
-            this.QuizApplicatieLable = new System.Windows.Forms.Label();
             this.CloseBtn = new System.Windows.Forms.PictureBox();
+            this.QuizApplicatieLable = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
@@ -52,10 +53,9 @@ namespace UitbereidingQuiz
             this.QuickplayLable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuickplayLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuickplayLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.QuickplayLable.Location = new System.Drawing.Point(292, 162);
-            this.QuickplayLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.QuickplayLable.Location = new System.Drawing.Point(219, 131);
             this.QuickplayLable.Name = "QuickplayLable";
-            this.QuickplayLable.Size = new System.Drawing.Size(1200, 121);
+            this.QuickplayLable.Size = new System.Drawing.Size(900, 98);
             this.QuickplayLable.TabIndex = 1;
             this.QuickplayLable.Text = "Quickplay";
             this.QuickplayLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,10 +68,9 @@ namespace UitbereidingQuiz
             this.CustomQuizLable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CustomQuizLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomQuizLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.CustomQuizLable.Location = new System.Drawing.Point(292, 289);
-            this.CustomQuizLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CustomQuizLable.Location = new System.Drawing.Point(219, 234);
             this.CustomQuizLable.Name = "CustomQuizLable";
-            this.CustomQuizLable.Size = new System.Drawing.Size(1200, 121);
+            this.CustomQuizLable.Size = new System.Drawing.Size(900, 98);
             this.CustomQuizLable.TabIndex = 2;
             this.CustomQuizLable.Text = "Custom Quiz";
             this.CustomQuizLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,10 +83,9 @@ namespace UitbereidingQuiz
             this.ScoresLable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ScoresLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoresLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.ScoresLable.Location = new System.Drawing.Point(292, 672);
-            this.ScoresLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ScoresLable.Location = new System.Drawing.Point(219, 546);
             this.ScoresLable.Name = "ScoresLable";
-            this.ScoresLable.Size = new System.Drawing.Size(1200, 121);
+            this.ScoresLable.Size = new System.Drawing.Size(900, 98);
             this.ScoresLable.TabIndex = 5;
             this.ScoresLable.Text = "Scores";
             this.ScoresLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,10 +98,9 @@ namespace UitbereidingQuiz
             this.EenVsEenLable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EenVsEenLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EenVsEenLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.EenVsEenLable.Location = new System.Drawing.Point(292, 416);
-            this.EenVsEenLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EenVsEenLable.Location = new System.Drawing.Point(219, 337);
             this.EenVsEenLable.Name = "EenVsEenLable";
-            this.EenVsEenLable.Size = new System.Drawing.Size(1200, 121);
+            this.EenVsEenLable.Size = new System.Drawing.Size(900, 98);
             this.EenVsEenLable.TabIndex = 4;
             this.EenVsEenLable.Text = "1 vs 1";
             this.EenVsEenLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,10 +113,9 @@ namespace UitbereidingQuiz
             this.VraagBeheerLable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VraagBeheerLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VraagBeheerLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.VraagBeheerLable.Location = new System.Drawing.Point(292, 543);
-            this.VraagBeheerLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.VraagBeheerLable.Location = new System.Drawing.Point(219, 440);
             this.VraagBeheerLable.Name = "VraagBeheerLable";
-            this.VraagBeheerLable.Size = new System.Drawing.Size(1200, 121);
+            this.VraagBeheerLable.Size = new System.Drawing.Size(900, 98);
             this.VraagBeheerLable.TabIndex = 3;
             this.VraagBeheerLable.Text = "Vragenbeheer";
             this.VraagBeheerLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,7 +125,7 @@ namespace UitbereidingQuiz
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel1.Controls.Add(this.VraagBeheerLable, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.EenVsEenLable, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.CustomQuizLable, 0, 2);
@@ -139,7 +135,7 @@ namespace UitbereidingQuiz
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -148,20 +144,32 @@ namespace UitbereidingQuiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1785, 799);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1339, 649);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.GeleBalkLable);
             this.panel1.Controls.Add(this.CloseBtn);
             this.panel1.Controls.Add(this.QuizApplicatieLable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1779, 155);
+            this.panel1.Size = new System.Drawing.Size(1335, 125);
             this.panel1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(117, 53);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GeleBalkLable
             // 
@@ -170,26 +178,11 @@ namespace UitbereidingQuiz
             this.GeleBalkLable.BackColor = System.Drawing.Color.Yellow;
             this.GeleBalkLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
             this.GeleBalkLable.ForeColor = System.Drawing.Color.White;
-            this.GeleBalkLable.Location = new System.Drawing.Point(32, 122);
-            this.GeleBalkLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GeleBalkLable.Location = new System.Drawing.Point(24, 99);
             this.GeleBalkLable.Name = "GeleBalkLable";
-            this.GeleBalkLable.Size = new System.Drawing.Size(1715, 6);
+            this.GeleBalkLable.Size = new System.Drawing.Size(1287, 5);
             this.GeleBalkLable.TabIndex = 51;
             this.GeleBalkLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // QuizApplicatieLable
-            // 
-            this.QuizApplicatieLable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuizApplicatieLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
-            this.QuizApplicatieLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.QuizApplicatieLable.Location = new System.Drawing.Point(31, 31);
-            this.QuizApplicatieLable.Margin = new System.Windows.Forms.Padding(29, 0, 29, 0);
-            this.QuizApplicatieLable.Name = "QuizApplicatieLable";
-            this.QuizApplicatieLable.Size = new System.Drawing.Size(1716, 91);
-            this.QuizApplicatieLable.TabIndex = 7;
-            this.QuizApplicatieLable.Text = "Quiz Applicatie";
-            this.QuizApplicatieLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CloseBtn
             // 
@@ -197,23 +190,36 @@ namespace UitbereidingQuiz
             this.CloseBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseBtn.BackgroundImage")));
             this.CloseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseBtn.Location = new System.Drawing.Point(44, 49);
+            this.CloseBtn.Location = new System.Drawing.Point(33, 40);
             this.CloseBtn.Margin = new System.Windows.Forms.Padding(1);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(55, 54);
+            this.CloseBtn.Size = new System.Drawing.Size(41, 44);
             this.CloseBtn.TabIndex = 46;
             this.CloseBtn.TabStop = false;
             this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
+            // QuizApplicatieLable
+            // 
+            this.QuizApplicatieLable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuizApplicatieLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
+            this.QuizApplicatieLable.ForeColor = System.Drawing.SystemColors.Control;
+            this.QuizApplicatieLable.Location = new System.Drawing.Point(23, 25);
+            this.QuizApplicatieLable.Margin = new System.Windows.Forms.Padding(22, 0, 22, 0);
+            this.QuizApplicatieLable.Name = "QuizApplicatieLable";
+            this.QuizApplicatieLable.Size = new System.Drawing.Size(1288, 74);
+            this.QuizApplicatieLable.TabIndex = 7;
+            this.QuizApplicatieLable.Text = "Quiz Applicatie";
+            this.QuizApplicatieLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // homescreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(1785, 799);
+            this.ClientSize = new System.Drawing.Size(1339, 649);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "homescreen";
@@ -239,6 +245,7 @@ namespace UitbereidingQuiz
         private System.Windows.Forms.Label QuizApplicatieLable;
         private System.Windows.Forms.PictureBox CloseBtn;
         private System.Windows.Forms.Label GeleBalkLable;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -43,10 +43,9 @@ namespace UitbereidingQuiz
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(11, 84);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(776, 12);
+            this.label4.Size = new System.Drawing.Size(900, 10);
             this.label4.TabIndex = 54;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -56,10 +55,10 @@ namespace UitbereidingQuiz
             this.BackBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackBtn.BackgroundImage")));
             this.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackBtn.Location = new System.Drawing.Point(24, 20);
+            this.BackBtn.Location = new System.Drawing.Point(18, 16);
             this.BackBtn.Margin = new System.Windows.Forms.Padding(1);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(55, 54);
+            this.BackBtn.Size = new System.Drawing.Size(41, 44);
             this.BackBtn.TabIndex = 53;
             this.BackBtn.TabStop = false;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
@@ -71,24 +70,26 @@ namespace UitbereidingQuiz
             this.VraagLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
             this.VraagLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VraagLable.ForeColor = System.Drawing.SystemColors.Control;
-            this.VraagLable.Location = new System.Drawing.Point(12, 9);
+            this.VraagLable.Location = new System.Drawing.Point(9, 7);
+            this.VraagLable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.VraagLable.Name = "VraagLable";
             this.VraagLable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.VraagLable.Size = new System.Drawing.Size(776, 75);
+            this.VraagLable.Size = new System.Drawing.Size(900, 61);
             this.VraagLable.TabIndex = 52;
             this.VraagLable.Text = "Scores";
             this.VraagLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // scores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(918, 582);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.VraagLable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "scores";
             this.Text = "scores";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
