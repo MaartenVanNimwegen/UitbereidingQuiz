@@ -29,47 +29,52 @@ namespace UitbereidingQuiz
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.NaamSpeler1 = new System.Windows.Forms.TextBox();
+            this.StartquizQuick = new System.Windows.Forms.Button();
+            this.NaamSpelerTextbox = new System.Windows.Forms.TextBox();
             this.SpelerNaamLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // StartquizQuick
             // 
-            this.button1.Location = new System.Drawing.Point(17, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Start quiz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.StartquizQuick.Location = new System.Drawing.Point(13, 53);
+            this.StartquizQuick.Margin = new System.Windows.Forms.Padding(2);
+            this.StartquizQuick.Name = "StartquizQuick";
+            this.StartquizQuick.Size = new System.Drawing.Size(75, 24);
+            this.StartquizQuick.TabIndex = 9;
+            this.StartquizQuick.Text = "Start quiz";
+            this.StartquizQuick.UseVisualStyleBackColor = true;
+            this.StartquizQuick.Click += new System.EventHandler(this.StartquizQuick_Click);
             // 
-            // NaamSpeler1
+            // NaamSpelerTextbox
             // 
-            this.NaamSpeler1.Location = new System.Drawing.Point(17, 37);
-            this.NaamSpeler1.Name = "NaamSpeler1";
-            this.NaamSpeler1.Size = new System.Drawing.Size(100, 22);
-            this.NaamSpeler1.TabIndex = 7;
+            this.NaamSpelerTextbox.Location = new System.Drawing.Point(13, 30);
+            this.NaamSpelerTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.NaamSpelerTextbox.Name = "NaamSpelerTextbox";
+            this.NaamSpelerTextbox.Size = new System.Drawing.Size(76, 20);
+            this.NaamSpelerTextbox.TabIndex = 7;
             // 
             // SpelerNaamLabel
             // 
             this.SpelerNaamLabel.AutoSize = true;
             this.SpelerNaamLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SpelerNaamLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.SpelerNaamLabel.Location = new System.Drawing.Point(12, 9);
+            this.SpelerNaamLabel.Location = new System.Drawing.Point(9, 7);
+            this.SpelerNaamLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SpelerNaamLabel.Name = "SpelerNaamLabel";
-            this.SpelerNaamLabel.Size = new System.Drawing.Size(188, 25);
+            this.SpelerNaamLabel.Size = new System.Drawing.Size(150, 20);
             this.SpelerNaamLabel.TabIndex = 5;
             this.SpelerNaamLabel.Text = "Vul hier uw naam in:";
             // 
             // naaminvullen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(216, 124);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.NaamSpeler1);
+            this.ClientSize = new System.Drawing.Size(162, 101);
+            this.Controls.Add(this.StartquizQuick);
+            this.Controls.Add(this.NaamSpelerTextbox);
             this.Controls.Add(this.SpelerNaamLabel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "naaminvullen";
@@ -84,8 +89,8 @@ namespace UitbereidingQuiz
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox NaamSpeler1;
+        private System.Windows.Forms.Button StartquizQuick;
+        private System.Windows.Forms.TextBox NaamSpelerTextbox;
         private System.Windows.Forms.Label SpelerNaamLabel;
     }
 }

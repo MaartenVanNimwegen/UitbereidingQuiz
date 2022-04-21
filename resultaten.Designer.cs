@@ -48,12 +48,12 @@ namespace UitbereidingQuiz
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label4.BackColor = System.Drawing.Color.Yellow;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(9, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(834, 8);
+            this.label4.Size = new System.Drawing.Size(1196, 8);
             this.label4.TabIndex = 52;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -68,7 +68,7 @@ namespace UitbereidingQuiz
             this.ResultatenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ResultatenLabel.Name = "ResultatenLabel";
             this.ResultatenLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ResultatenLabel.Size = new System.Drawing.Size(835, 67);
+            this.ResultatenLabel.Size = new System.Drawing.Size(1197, 67);
             this.ResultatenLabel.TabIndex = 51;
             this.ResultatenLabel.Text = "Resultaten";
             this.ResultatenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,9 +93,9 @@ namespace UitbereidingQuiz
             this.GoedBeantwoordeVragen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.GoedBeantwoordeVragen.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.GoedBeantwoordeVragen.ForeColor = System.Drawing.Color.White;
-            this.GoedBeantwoordeVragen.Location = new System.Drawing.Point(3, 21);
+            this.GoedBeantwoordeVragen.Location = new System.Drawing.Point(30, 54);
             this.GoedBeantwoordeVragen.Name = "GoedBeantwoordeVragen";
-            this.GoedBeantwoordeVragen.Size = new System.Drawing.Size(410, 82);
+            this.GoedBeantwoordeVragen.Size = new System.Drawing.Size(536, 138);
             this.GoedBeantwoordeVragen.TabIndex = 63;
             this.GoedBeantwoordeVragen.Text = "Goed beantwoorde vragen: 0";
             this.GoedBeantwoordeVragen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,9 +106,9 @@ namespace UitbereidingQuiz
             this.TotaleScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.TotaleScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.TotaleScore.ForeColor = System.Drawing.Color.White;
-            this.TotaleScore.Location = new System.Drawing.Point(419, 272);
+            this.TotaleScore.Location = new System.Drawing.Point(628, 549);
             this.TotaleScore.Name = "TotaleScore";
-            this.TotaleScore.Size = new System.Drawing.Size(409, 82);
+            this.TotaleScore.Size = new System.Drawing.Size(535, 138);
             this.TotaleScore.TabIndex = 64;
             this.TotaleScore.Text = "Totale tijd: 0";
             this.TotaleScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,9 +119,9 @@ namespace UitbereidingQuiz
             this.StrafSeconden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.StrafSeconden.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.StrafSeconden.ForeColor = System.Drawing.Color.White;
-            this.StrafSeconden.Location = new System.Drawing.Point(419, 146);
+            this.StrafSeconden.Location = new System.Drawing.Point(628, 301);
             this.StrafSeconden.Name = "StrafSeconden";
-            this.StrafSeconden.Size = new System.Drawing.Size(409, 82);
+            this.StrafSeconden.Size = new System.Drawing.Size(535, 138);
             this.StrafSeconden.TabIndex = 67;
             this.StrafSeconden.Text = "Strafseconden: 0";
             this.StrafSeconden.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,9 +132,9 @@ namespace UitbereidingQuiz
             this.TerugNaarHoofdmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.TerugNaarHoofdmenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.TerugNaarHoofdmenu.ForeColor = System.Drawing.Color.White;
-            this.TerugNaarHoofdmenu.Location = new System.Drawing.Point(3, 272);
+            this.TerugNaarHoofdmenu.Location = new System.Drawing.Point(30, 549);
             this.TerugNaarHoofdmenu.Name = "TerugNaarHoofdmenu";
-            this.TerugNaarHoofdmenu.Size = new System.Drawing.Size(410, 82);
+            this.TerugNaarHoofdmenu.Size = new System.Drawing.Size(536, 138);
             this.TerugNaarHoofdmenu.TabIndex = 68;
             this.TerugNaarHoofdmenu.Text = "Terug naar hoofdmenu";
             this.TerugNaarHoofdmenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,9 +145,9 @@ namespace UitbereidingQuiz
             this.TijdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.TijdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.TijdLabel.ForeColor = System.Drawing.Color.White;
-            this.TijdLabel.Location = new System.Drawing.Point(419, 21);
+            this.TijdLabel.Location = new System.Drawing.Point(627, 54);
             this.TijdLabel.Name = "TijdLabel";
-            this.TijdLabel.Size = new System.Drawing.Size(410, 82);
+            this.TijdLabel.Size = new System.Drawing.Size(536, 138);
             this.TijdLabel.TabIndex = 66;
             this.TijdLabel.Text = "Gebruikte tijd: 0s";
             this.TijdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,9 +158,9 @@ namespace UitbereidingQuiz
             this.FoutBeantwoordeVragen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.FoutBeantwoordeVragen.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.FoutBeantwoordeVragen.ForeColor = System.Drawing.Color.White;
-            this.FoutBeantwoordeVragen.Location = new System.Drawing.Point(3, 146);
+            this.FoutBeantwoordeVragen.Location = new System.Drawing.Point(30, 301);
             this.FoutBeantwoordeVragen.Name = "FoutBeantwoordeVragen";
-            this.FoutBeantwoordeVragen.Size = new System.Drawing.Size(410, 82);
+            this.FoutBeantwoordeVragen.Size = new System.Drawing.Size(536, 138);
             this.FoutBeantwoordeVragen.TabIndex = 65;
             this.FoutBeantwoordeVragen.Text = "Fout beantwoorde vragen: 0";
             this.FoutBeantwoordeVragen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,7 +186,7 @@ namespace UitbereidingQuiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(832, 376);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1194, 742);
             this.tableLayoutPanel1.TabIndex = 69;
             // 
             // resultaten
@@ -194,7 +194,7 @@ namespace UitbereidingQuiz
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(853, 476);
+            this.ClientSize = new System.Drawing.Size(1215, 842);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.CloseBtn);

@@ -21,5 +21,11 @@ namespace UitbereidingQuiz
         {
             Close();
         }
+
+        private void startcustomquiz_Click(object sender, EventArgs e)
+        {
+            naaminvullen MyForm = new naaminvullen();
+            MyForm.Show();
+        }
     }
 }

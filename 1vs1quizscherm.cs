@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UitbereidingQuiz
 {
-    public partial class resultaten : Form
+    public partial class _1vs1quizscherm : Form
     {
-        public resultaten(int GoedAntwoord, int FoutAntwoord, int StrafTijd, int Tijd)
+        public _1vs1quizscherm()
         {
             InitializeComponent();
-        }
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

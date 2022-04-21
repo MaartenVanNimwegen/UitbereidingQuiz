@@ -12,9 +12,16 @@ namespace UitbereidingQuiz
 {
     public partial class naaminvullen : Form
     {
+        public static string naam = "";
+
         public naaminvullen()
         {
             InitializeComponent();
+        }
+
+        public void StartquizQuick_Click(object sender, EventArgs e)
+        {
+            naam = NaamSpelerTextbox.Text;
         }
     }
 }
