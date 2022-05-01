@@ -8,6 +8,6 @@ namespace UitbereidingQuiz
 {
     class DatabaseSettings
     {
-        public static string Connectionstring = "Data Source = localhost; Initial Catalog = quizapplicatie; User ID = root; Password = ";
+        public static string Connectionstring = "Data Source = localhost; Initial Catalog = uitbereidingquiz; User ID = root; Password = ";
     }
 }
