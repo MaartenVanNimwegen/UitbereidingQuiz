@@ -29,6 +29,7 @@ namespace UitbereidingQuiz
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(quizscherm));
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.BackBtn = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,10 @@ namespace UitbereidingQuiz
             this.label2 = new System.Windows.Forms.Label();
             this.SelectedA = new System.Windows.Forms.Label();
             this.SelectedB = new System.Windows.Forms.Label();
+            this.GlobalCountUpTimer = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.AftelTimerVolgendeVraag = new System.Windows.Forms.Timer(this.components);
+            this.TijdVanAntwoorden = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +78,7 @@ namespace UitbereidingQuiz
             this.BackBtn.Size = new System.Drawing.Size(41, 41);
             this.BackBtn.TabIndex = 69;
             this.BackBtn.TabStop = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // VraagLable
             // 
@@ -92,7 +98,6 @@ namespace UitbereidingQuiz
             // 
             // AnswerB
             // 
-            this.AnswerB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.AnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerB.ForeColor = System.Drawing.SystemColors.Control;
@@ -107,7 +112,6 @@ namespace UitbereidingQuiz
             // 
             // BLetter
             // 
-            this.BLetter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.BLetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BLetter.ForeColor = System.Drawing.SystemColors.Control;
@@ -122,7 +126,6 @@ namespace UitbereidingQuiz
             // 
             // AnswerA
             // 
-            this.AnswerA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.AnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerA.ForeColor = System.Drawing.Color.White;
@@ -137,7 +140,6 @@ namespace UitbereidingQuiz
             // 
             // ALetter
             // 
-            this.ALetter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ALetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.ALetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ALetter.ForeColor = System.Drawing.SystemColors.Control;
@@ -161,10 +163,10 @@ namespace UitbereidingQuiz
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.QuestionTimeLabel);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(736, 108);
+            this.panel1.Location = new System.Drawing.Point(736, 119);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 525);
+            this.panel1.Size = new System.Drawing.Size(348, 514);
             this.panel1.TabIndex = 74;
             // 
             // ExtraSecondsLabel
@@ -242,7 +244,6 @@ namespace UitbereidingQuiz
             // 
             // SelectedA
             // 
-            this.SelectedA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SelectedA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.SelectedA.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedA.ForeColor = System.Drawing.SystemColors.Control;
@@ -256,7 +257,6 @@ namespace UitbereidingQuiz
             // 
             // SelectedB
             // 
-            this.SelectedB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SelectedB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(146)))));
             this.SelectedB.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedB.ForeColor = System.Drawing.SystemColors.Control;
@@ -267,6 +267,24 @@ namespace UitbereidingQuiz
             this.SelectedB.Size = new System.Drawing.Size(10, 120);
             this.SelectedB.TabIndex = 75;
             this.SelectedB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GlobalCountUpTimer
+            // 
+            this.GlobalCountUpTimer.Enabled = true;
+            this.GlobalCountUpTimer.Interval = 1000;
+            this.GlobalCountUpTimer.Tick += new System.EventHandler(this.GlobalTimer_Tick);
+            // 
+            // AftelTimerVolgendeVraag
+            // 
+            this.AftelTimerVolgendeVraag.Enabled = true;
+            this.AftelTimerVolgendeVraag.Interval = 1000;
+            this.AftelTimerVolgendeVraag.Tick += new System.EventHandler(this.AftelTimerVolgendeVraag_Tick);
+            // 
+            // TijdVanAntwoorden
+            // 
+            this.TijdVanAntwoorden.Enabled = true;
+            this.TijdVanAntwoorden.Interval = 1000;
+            this.TijdVanAntwoorden.Tick += new System.EventHandler(this.TijdVanAntwoorden_Tick);
             // 
             // quizscherm
             // 
@@ -288,6 +306,7 @@ namespace UitbereidingQuiz
             this.Name = "quizscherm";
             this.Text = "quizscherm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VragenScherm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -312,5 +331,9 @@ namespace UitbereidingQuiz
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label SelectedA;
         private System.Windows.Forms.Label SelectedB;
+        private System.Windows.Forms.Timer GlobalCountUpTimer;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer AftelTimerVolgendeVraag;
+        private System.Windows.Forms.Timer TijdVanAntwoorden;
     }
 }
