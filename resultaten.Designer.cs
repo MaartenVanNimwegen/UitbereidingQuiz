@@ -138,6 +138,7 @@ namespace UitbereidingQuiz
             this.TerugNaarHoofdmenu.TabIndex = 68;
             this.TerugNaarHoofdmenu.Text = "Terug naar hoofdmenu";
             this.TerugNaarHoofdmenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TerugNaarHoofdmenu.Click += new System.EventHandler(this.TerugNaarHoofdmenu_Click);
             // 
             // TijdLabel
             // 
@@ -202,7 +203,7 @@ namespace UitbereidingQuiz
             this.Controls.Add(this.ResultatenLabel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "resultaten";
             this.Text = "resultaten";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

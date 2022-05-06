@@ -12,10 +12,17 @@ namespace UitbereidingQuiz
 {
     public partial class customquizconfig : Form
     {
-        public customquizconfig()
+        string Naam;
+
+        public customquizconfig(string naam)
         {
             InitializeComponent();
+            Naam = naam;
         }
+        int tijdPerVraag;
+        int strafseconde;
+        int aantalvragen;
+        bool QuizIsCustom;
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
@@ -24,8 +31,13 @@ namespace UitbereidingQuiz
 
         private void startcustomquiz_Click(object sender, EventArgs e)
         {
-            naaminvullen MyForm = new naaminvullen();
-            MyForm.Show();
+            tijdPerVraag = int.Parse(TijdPerVraagTextbox.Text);
+            strafseconde = int.Parse(StrafsecondenTextbox.Text);
+            aantalvragen = int.Parse(AantalVragenTextbox.Text);
+            QuizIsCustom = true;
+
+            quizscherm myForm = new quizscherm(QuizIsCustom, tijdPerVraag, strafseconde, aantalvragen, Naam);
+            myForm.Show();
         }
     }
 }

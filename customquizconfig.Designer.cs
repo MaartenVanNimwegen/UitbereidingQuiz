@@ -36,7 +36,7 @@ namespace UitbereidingQuiz
             this.TijdPerVraagLable = new System.Windows.Forms.Label();
             this.TijdPerVraagTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AantalVragenTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.StrafsecondenTextbox = new System.Windows.Forms.TextBox();
@@ -121,19 +121,19 @@ namespace UitbereidingQuiz
             this.label1.Size = new System.Drawing.Size(240, 150);
             this.label1.TabIndex = 57;
             // 
-            // textBox1
+            // AantalVragenTextbox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(474, 670);
-            this.textBox1.MaxLength = 2;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 56);
-            this.textBox1.TabIndex = 59;
-            this.textBox1.Text = "10";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AantalVragenTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
+            this.AantalVragenTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AantalVragenTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 37F);
+            this.AantalVragenTextbox.ForeColor = System.Drawing.Color.White;
+            this.AantalVragenTextbox.Location = new System.Drawing.Point(474, 670);
+            this.AantalVragenTextbox.MaxLength = 2;
+            this.AantalVragenTextbox.Name = "AantalVragenTextbox";
+            this.AantalVragenTextbox.Size = new System.Drawing.Size(240, 56);
+            this.AantalVragenTextbox.TabIndex = 59;
+            this.AantalVragenTextbox.Text = "10";
+            this.AantalVragenTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -144,7 +144,7 @@ namespace UitbereidingQuiz
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(345, 150);
             this.label2.TabIndex = 58;
-            this.label2.Text = "Tijd per vraag:";
+            this.label2.Text = "Aantal vragen:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -212,7 +212,7 @@ namespace UitbereidingQuiz
             this.Controls.Add(this.StrafsecondenTextbox);
             this.Controls.Add(this.StrafsecondenLable);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AantalVragenTextbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TijdPerVraagTextbox);
@@ -239,7 +239,7 @@ namespace UitbereidingQuiz
         private System.Windows.Forms.Label TijdPerVraagLable;
         private System.Windows.Forms.TextBox TijdPerVraagTextbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AantalVragenTextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox StrafsecondenTextbox;

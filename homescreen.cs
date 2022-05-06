@@ -24,13 +24,13 @@ namespace UitbereidingQuiz
         
         private void QuickplayLable_Click(object sender, EventArgs e)
         {
-            naaminvullen myForm = new naaminvullen();
+            naaminvullen myForm = new naaminvullen(0);
             myForm.Show();
         }
 
         private void CustomQuizLable_Click(object sender, EventArgs e)
         {
-            customquizconfig myForm = new customquizconfig();
+            naaminvullen myForm = new naaminvullen(1);
             myForm.Show();
         }
 

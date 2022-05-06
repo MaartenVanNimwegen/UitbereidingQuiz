@@ -16,9 +16,10 @@ namespace UitbereidingQuiz
         public static string naam = "";
         int QuizIsCustom = 0;
 
-        public naaminvullen()
+        public naaminvullen(int IsQuizCustom)
         {
             InitializeComponent();
+            QuizIsCustom = IsQuizCustom;
         }
 
         public void StartquizQuick_Click(object sender, EventArgs e)
@@ -40,9 +41,19 @@ namespace UitbereidingQuiz
                         Close();
                     }
                 }
-
-                quizscherm myForm = new quizscherm(false, 10, 10, 10, naam);
-                myForm.ShowDialog();
+                
+                if (QuizIsCustom == 0)
+                {
+                    quizscherm myForm = new quizscherm(false, 10, 10, 10, naam);
+                    myForm.ShowDialog();
+                }
+                else if (QuizIsCustom == 1)
+                {
+                    customquizconfig myForm = new customquizconfig(naam);
+                    myForm.ShowDialog();
+                }
+                
+                
             }
             else if (NaamSpelerTextbox.Text.Length == 0)
             {
