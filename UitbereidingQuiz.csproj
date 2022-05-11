@@ -89,12 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1vs1quizscherm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="1vs1quizscherm.Designer.cs">
-      <DependentUpon>1vs1quizscherm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AntwoordenClass.cs" />
     <Compile Include="customquizconfig.cs">
       <SubType>Form</SubType>
@@ -103,12 +97,19 @@
       <DependentUpon>customquizconfig.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseSettings.cs" />
+    <Compile Include="EenvsEenQuizscmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EenvsEenQuizscmer.Designer.cs">
+      <DependentUpon>EenvsEenQuizscmer.cs</DependentUpon>
+    </Compile>
     <Compile Include="homescreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="homescreen.Designer.cs">
       <DependentUpon>homescreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="lijstmetvragen.cs" />
     <Compile Include="naaminvullen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,11 +167,11 @@
     <Compile Include="vraagwijzigen.Designer.cs">
       <DependentUpon>vraagwijzigen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="1vs1quizscherm.resx">
-      <DependentUpon>1vs1quizscherm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="customquizconfig.resx">
       <DependentUpon>customquizconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EenvsEenQuizscmer.resx">
+      <DependentUpon>EenvsEenQuizscmer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homescreen.resx">
       <DependentUpon>homescreen.cs</DependentUpon>
@@ -228,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\kruis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="winner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
