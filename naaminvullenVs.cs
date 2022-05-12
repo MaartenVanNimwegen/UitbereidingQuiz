@@ -43,7 +43,7 @@ namespace UitbereidingQuiz
                     }
                 }
 
-                 EenvsEenQuizscmer myForm = new EenvsEenQuizscmer(false, 10, 10, 10, naam1, naam2, naamvs);
+                EenvsEenQuizscmer myForm = new EenvsEenQuizscmer(false, 10, 10, 10, naam1, naam2, naamvs);
                 myForm.ShowDialog();
             }
             else if (NaamSpeler1.Text.Length <= 0 || NaamSpeler2.Text.Length <= 0)

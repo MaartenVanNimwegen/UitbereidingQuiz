@@ -32,6 +32,8 @@ namespace UitbereidingQuiz
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EenvsEenQuizscmer));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GlobalTimeLabel = new System.Windows.Forms.Label();
+            this.tijdVoorVraag = new System.Windows.Forms.Label();
             this.PuntenSpeler2 = new System.Windows.Forms.Label();
             this.PuntenSpeler1 = new System.Windows.Forms.Label();
             this.NaamSpeler2 = new System.Windows.Forms.Label();
@@ -43,15 +45,13 @@ namespace UitbereidingQuiz
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.VraagLable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.SelectedB = new System.Windows.Forms.Label();
+            this.SelectedA = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.PictureBox();
             this.GlobalCountUpTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.AftelTimerVolgendeVraag = new System.Windows.Forms.Timer(this.components);
             this.TijdVanAntwoorden = new System.Windows.Forms.Timer(this.components);
-            this.SelectedB = new System.Windows.Forms.Label();
-            this.SelectedA = new System.Windows.Forms.Label();
-            this.GlobalTimeLabel = new System.Windows.Forms.Label();
-            this.tijdVoorVraag = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackBtn)).BeginInit();
@@ -72,6 +72,30 @@ namespace UitbereidingQuiz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 212);
             this.panel1.TabIndex = 82;
+            // 
+            // GlobalTimeLabel
+            // 
+            this.GlobalTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GlobalTimeLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.GlobalTimeLabel.Location = new System.Drawing.Point(66, 151);
+            this.GlobalTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GlobalTimeLabel.Name = "GlobalTimeLabel";
+            this.GlobalTimeLabel.Size = new System.Drawing.Size(102, 61);
+            this.GlobalTimeLabel.TabIndex = 5;
+            this.GlobalTimeLabel.Text = "0";
+            this.GlobalTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tijdVoorVraag
+            // 
+            this.tijdVoorVraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tijdVoorVraag.ForeColor = System.Drawing.SystemColors.Control;
+            this.tijdVoorVraag.Location = new System.Drawing.Point(3, 151);
+            this.tijdVoorVraag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tijdVoorVraag.Name = "tijdVoorVraag";
+            this.tijdVoorVraag.Size = new System.Drawing.Size(74, 61);
+            this.tijdVoorVraag.TabIndex = 4;
+            this.tijdVoorVraag.Text = "Tijd:";
+            this.tijdVoorVraag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PuntenSpeler2
             // 
@@ -218,36 +242,6 @@ namespace UitbereidingQuiz
             this.panel2.Size = new System.Drawing.Size(1073, 407);
             this.panel2.TabIndex = 83;
             // 
-            // BackBtn
-            // 
-            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
-            this.BackBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackBtn.BackgroundImage")));
-            this.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackBtn.Location = new System.Drawing.Point(21, 88);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(41, 41);
-            this.BackBtn.TabIndex = 82;
-            this.BackBtn.TabStop = false;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
-            // 
-            // GlobalCountUpTimer
-            // 
-            this.GlobalCountUpTimer.Enabled = true;
-            this.GlobalCountUpTimer.Interval = 1000;
-            this.GlobalCountUpTimer.Tick += new System.EventHandler(this.GlobalTimer_Tick);
-            // 
-            // AftelTimerVolgendeVraag
-            // 
-            this.AftelTimerVolgendeVraag.Enabled = true;
-            this.AftelTimerVolgendeVraag.Interval = 1000;
-            // 
-            // TijdVanAntwoorden
-            // 
-            this.TijdVanAntwoorden.Enabled = true;
-            this.TijdVanAntwoorden.Interval = 1000;
-            // 
             // SelectedB
             // 
             this.SelectedB.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -276,29 +270,36 @@ namespace UitbereidingQuiz
             this.SelectedA.TabIndex = 82;
             this.SelectedA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // GlobalTimeLabel
+            // BackBtn
             // 
-            this.GlobalTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GlobalTimeLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.GlobalTimeLabel.Location = new System.Drawing.Point(66, 151);
-            this.GlobalTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.GlobalTimeLabel.Name = "GlobalTimeLabel";
-            this.GlobalTimeLabel.Size = new System.Drawing.Size(102, 61);
-            this.GlobalTimeLabel.TabIndex = 5;
-            this.GlobalTimeLabel.Text = "0";
-            this.GlobalTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(93)))), ((int)(((byte)(171)))));
+            this.BackBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackBtn.BackgroundImage")));
+            this.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BackBtn.Location = new System.Drawing.Point(21, 88);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(41, 41);
+            this.BackBtn.TabIndex = 82;
+            this.BackBtn.TabStop = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
-            // tijdVoorVraag
+            // GlobalCountUpTimer
             // 
-            this.tijdVoorVraag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tijdVoorVraag.ForeColor = System.Drawing.SystemColors.Control;
-            this.tijdVoorVraag.Location = new System.Drawing.Point(3, 151);
-            this.tijdVoorVraag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tijdVoorVraag.Name = "tijdVoorVraag";
-            this.tijdVoorVraag.Size = new System.Drawing.Size(74, 61);
-            this.tijdVoorVraag.TabIndex = 4;
-            this.tijdVoorVraag.Text = "Tijd:";
-            this.tijdVoorVraag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GlobalCountUpTimer.Enabled = true;
+            this.GlobalCountUpTimer.Interval = 1000;
+            this.GlobalCountUpTimer.Tick += new System.EventHandler(this.GlobalTimer_Tick);
+            // 
+            // AftelTimerVolgendeVraag
+            // 
+            this.AftelTimerVolgendeVraag.Enabled = true;
+            this.AftelTimerVolgendeVraag.Interval = 1000;
+            this.AftelTimerVolgendeVraag.Tick += new System.EventHandler(this.AftelTimerVolgendeVraag_Tick);
+            // 
+            // TijdVanAntwoorden
+            // 
+            this.TijdVanAntwoorden.Enabled = true;
+            this.TijdVanAntwoorden.Interval = 1000;
             // 
             // EenvsEenQuizscmer
             // 

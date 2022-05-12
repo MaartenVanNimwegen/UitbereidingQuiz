@@ -18,13 +18,18 @@ namespace UitbereidingQuiz
         string Naamvs;
         string CorrectAnswer = "";
         string GegevenAndwoord;
-        
+
+        int userId1;
+        int userId2;
+        int AantalFouteVragen1;
+        int AantalGoedBeandwoordeVragen1;
+        int AantalFouteVragen2;
+        int AantalGoedBeandwoordeVragen2;
         int aantalVragen;
         int tijdPerVraag;
         int strafTijd;
         int puntenSpeler1 = 0;
         int puntenSpeler2 = 0;
-        int QuestionAmount = 10;
         int QuestionsCurrentListIndex = 0;
         int VraagNummer = 0;
         int TijdVanBeantwoorden;
@@ -37,6 +42,7 @@ namespace UitbereidingQuiz
         int AftelNaarVolgende = 3;
         int aantathuidigestrafseconde;
         int aantatstrafseconde;
+        int antwoordint;
 
         bool TimerPlaying = false;
         bool AcceptingInput = false;
@@ -46,6 +52,8 @@ namespace UitbereidingQuiz
         bool IsGoedBeandwoord;
         bool beurtspeler1 = false;
         bool beurtspeler2= false;
+        bool speler1heeftgoedandwoord;
+        bool speler2heeftgoedandwoord;
 
         List<VraagClass> Questions;
         VraagClass currentquestion;
@@ -66,7 +74,7 @@ namespace UitbereidingQuiz
             Naam2 = naam2;
             Naamvs = naamvs;
             
-            Questions = GetQuestions(QuestionAmount);
+            Questions = GetQuestions(aantalVragen);
             setlabels();
             AskQuestion(Questions[QuestionsCurrentListIndex], QuestionsCurrentListIndex);
 
@@ -142,6 +150,9 @@ namespace UitbereidingQuiz
 
             SelectedA.BackColor = DefaultColor;
             SelectedB.BackColor = DefaultColor;
+
+            NaamSpeler1.ForeColor = Color.White;
+            NaamSpeler2.ForeColor = Color.White;
         }
         private int GetRandomQuestionListId()
         {
@@ -267,7 +278,16 @@ namespace UitbereidingQuiz
         }
         private void AntwoordOpslaan(int userId, int vraagId, bool antwoord)
         { 
-            string query = "INSERT INTO andwoordvs (userId, vraagId, IsGoedBeandwoord, datum) VALUES ('" + userId + "', '" + vraagId + "', '" + IsGoedBeandwoord + "', now())";
+            if(antwoord == true)
+            {
+                antwoordint = 1;
+            }
+            else if(antwoord == false)
+            {
+                antwoordint = 0;
+            }
+
+            string query = "INSERT INTO andwoordvs (userId, vraagId, IsGoedBeandwoord, datum) VALUES ('" + userId + "', '" + vraagId + "', '" + antwoordint + "', now())";
 
 
             using (MySqlConnection connection = new MySqlConnection())
@@ -283,7 +303,7 @@ namespace UitbereidingQuiz
         }
         public void progress()
         {
-            int Step = 100 / QuestionAmount;
+            int Step = 100 / aantalVragen;
 
             progressBar.Step = Step;
             progressBar.Value = Step * VraagNummer;
@@ -340,141 +360,315 @@ namespace UitbereidingQuiz
         }
         public void EenvsEenQuizscerm_KeyDown(object sender, KeyEventArgs e)
         {
-            //
             GetIdByName1(Naam1);
             GetIdByName2(Naam2);
             int vraagId = currentquestion.id;
 
-            if (e.KeyCode == Keys.A)
+            if (AcceptingInput)
             {
-                beurtspeler1 = true;
-                NaamSpeler1.ForeColor = Color.Green;
-            }
-            else if (e.KeyCode == Keys.B)
-            {
-                beurtspeler2 = true;
-                NaamSpeler2.ForeColor = Color.Green;
-            }
-
-            if (beurtspeler1 == true)
-            {
-                if (e.KeyCode == Keys.Up)
+                if (e.KeyCode == Keys.A)
                 {
-                    HasGivenInput = true;
-                    AnswerA.ForeColor = SelectedColor;
-                    ALetter.ForeColor = SelectedColor;
-                    SelectedA.BackColor = SelectedColor;
+                    beurtspeler1 = true;
+                    beurtspeler2 = false;
+                    NaamSpeler1.ForeColor = Color.Green;
+                    NaamSpeler2.ForeColor = Color.Red;
 
-                    if (CorrectAnswer == "A")
+                }
+                else if (e.KeyCode == Keys.B)
+                {
+                    beurtspeler2 = true;
+                    beurtspeler1 = false;
+                    NaamSpeler2.ForeColor = Color.Green;
+                    NaamSpeler1.ForeColor = Color.Red;
+                }
+
+                if (beurtspeler1 == true)
+                {
+                    if (e.KeyCode == Keys.Up)
                     {
-                        SelectedB.BackColor = IncorrectColor;
+                        HasGivenInput = true;
+                        AnswerA.ForeColor = SelectedColor;
+                        ALetter.ForeColor = SelectedColor;
+                        SelectedA.BackColor = SelectedColor;
 
-                        CorrectInput = true;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = true;
-                        AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
-                        progress();
+                        if (CorrectAnswer == "A")
+                        {
+                            ALetter.BackColor = CorrectColor;
+                            AnswerA.BackColor = CorrectColor;
+
+                            CorrectInput = true;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = true;
+                            puntenSpeler1 = puntenSpeler1 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
+                            progress();
+                            speler1heeftgoedandwoord = true;
+                        }
+                        else if (CorrectAnswer == "B")
+                        {
+                            AnswerA.BackColor = IncorrectColor;
+                            ALetter.BackColor = IncorrectColor;
+                            BLetter.BackColor = CorrectColor;
+                            AnswerB.BackColor = CorrectColor;
+                            SelectedB.BackColor = CorrectColor;
+
+                            CorrectInput = false;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = false;
+                            puntenSpeler2 = puntenSpeler2 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
+                            progress();
+                        }
                     }
-                    else
+                    else if (e.KeyCode == Keys.Down)
                     {
-                        SelectedB.BackColor = CorrectColor;
+                        HasGivenInput = true;
+                        AnswerB.ForeColor = SelectedColor;
+                        BLetter.ForeColor = SelectedColor;
+                        SelectedB.BackColor = SelectedColor;
 
-                        CorrectInput = false;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = false;
-                        AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
-                        progress();
+                        if (CorrectAnswer == "B")
+                        {
+                            BLetter.BackColor = CorrectColor;
+                            AnswerB.BackColor = CorrectColor;
+                            
+                            CorrectInput = true;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = true;
+                            puntenSpeler1 = puntenSpeler1 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
+                            progress();
+                            speler1heeftgoedandwoord = true;
+                        }
+                        else if (CorrectAnswer == "A")
+                        {
+                            AnswerB.BackColor = IncorrectColor;
+                            BLetter.BackColor = IncorrectColor;
+                            ALetter.BackColor = CorrectColor;
+                            AnswerA.BackColor = CorrectColor;
+                            SelectedA.BackColor = CorrectColor;
+
+                            CorrectInput = false;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = false;
+                            puntenSpeler2 = puntenSpeler2 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
+                            progress();
+                        }
                     }
                 }
-                else if (e.KeyCode == Keys.Down)
+                else if (beurtspeler2 == true)
                 {
-                    HasGivenInput = true;
-                    AnswerB.ForeColor = SelectedColor;
-                    BLetter.ForeColor = SelectedColor;
-                    SelectedB.BackColor = SelectedColor;
+                    if (e.KeyCode == Keys.Up)
+                    {
+                        HasGivenInput = true;
+                        AnswerA.ForeColor = SelectedColor;
+                        ALetter.ForeColor = SelectedColor;
+                        SelectedA.BackColor = SelectedColor;
 
-                    if (CorrectAnswer == "B")
-                    {
-                        SelectedA.BackColor = IncorrectColor;
-                        CorrectInput = true;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = true;
-                        AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
-                        progress();
+                        if (CorrectAnswer == "A")
+                        {
+                            ALetter.BackColor = CorrectColor;
+                            AnswerA.BackColor = CorrectColor;
+
+                            CorrectInput = true;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = true;
+                            puntenSpeler2 = puntenSpeler2 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
+                            progress();
+                            speler2heeftgoedandwoord = true;
+                        }
+                        else if (CorrectAnswer == "B")
+                        {
+                            AnswerA.BackColor = IncorrectColor;
+                            ALetter.BackColor = IncorrectColor;
+                            BLetter.BackColor = CorrectColor;
+                            AnswerB.BackColor = CorrectColor;
+                            SelectedB.BackColor = CorrectColor;
+
+                            CorrectInput = false;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = false;
+                            puntenSpeler1 = puntenSpeler1 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
+                            progress();
+                        }
                     }
-                    else
+                    else if (e.KeyCode == Keys.Down)
                     {
-                        SelectedA.BackColor = CorrectColor;
-                        CorrectInput = false;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = false;
-                        AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
-                        progress();
+                        HasGivenInput = true;
+                        AnswerB.ForeColor = SelectedColor;
+                        BLetter.ForeColor = SelectedColor;
+                        SelectedB.BackColor = SelectedColor;
+
+                        if (CorrectAnswer == "B")
+                        {
+                            BLetter.BackColor = CorrectColor;
+                            AnswerB.BackColor = CorrectColor;
+
+                            CorrectInput = true;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = true;
+                            puntenSpeler2 = puntenSpeler2 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
+                            progress();
+                            speler2heeftgoedandwoord = true;
+                        }
+                        else
+                        {
+                            AnswerB.BackColor = IncorrectColor;
+                            BLetter.BackColor = IncorrectColor;
+                            ALetter.BackColor = CorrectColor;
+                            AnswerA.BackColor = CorrectColor;
+                            SelectedA.BackColor = CorrectColor;
+
+                            CorrectInput = false;
+                            AftelNaarVolgende = defaultAftelNaarVolgende;
+                            IsCountingDown = true;
+                            IsGoedBeandwoord = false;
+                            puntenSpeler1 = puntenSpeler1 + 10;
+                            setlabels();
+                            AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
+                            progress();
+                        }
                     }
                 }
             }
-            else if (beurtspeler2 == true)
+        }
+        private void AftelTimerVolgendeVraag_Tick(object sender, EventArgs e)
+        {
+            if (HasGivenInput == true && IsCountingDown == true)
             {
-                if (e.KeyCode == Keys.Up)
+                if (AftelNaarVolgende > 0)
                 {
-                    HasGivenInput = true;
-                    AnswerA.ForeColor = SelectedColor;
-                    ALetter.ForeColor = SelectedColor;
-                    SelectedA.BackColor = SelectedColor;
+                    AftelNaarVolgende--;
+                }
 
-                    if (CorrectAnswer == "A")
+                if (AftelNaarVolgende == 0)
+                {
+                    IsCountingDown = false;
+
+                    if (Questions.Count > 0)
                     {
-                        SelectedB.BackColor = IncorrectColor;
-
-                        CorrectInput = true;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = true;
-                        AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
-                        progress();
+                        AskQuestion(Questions[QuestionsCurrentListIndex], QuestionsCurrentListIndex);
                     }
                     else
                     {
-                        SelectedB.BackColor = CorrectColor;
-
-                        CorrectInput = false;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = false;
-                        AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
-                        progress();
+                        CheckAantalVragen();
+                        resultatenvs myForm = new resultatenvs(Naam1, Naam2, AantalGoedBeandwoordeVragen1, AantalGoedBeandwoordeVragen2, AantalFouteVragen1, AantalFouteVragen2);
+                        myForm.ShowDialog();
+                        Close();
                     }
                 }
-                else if (e.KeyCode == Keys.Down)
-                {
-                    HasGivenInput = true;
-                    AnswerB.ForeColor = SelectedColor;
-                    BLetter.ForeColor = SelectedColor;
-                    SelectedB.BackColor = SelectedColor;
+            }
+        }
+        public void CheckAantalVragen()
+        {
+            string query = "SELECT id FROM speler WHERE naam = '" + Naam1 + "'";
 
-                    if (CorrectAnswer == "B")
+            using (MySqlConnection connection = new MySqlConnection())
+            {
+                connection.ConnectionString = DatabaseSettings.Connectionstring;
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    MySqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
                     {
-                        SelectedA.BackColor = IncorrectColor;
-                        CorrectInput = true;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = true;
-                        AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
-                        progress();
+                        while (reader.Read())
+                        {
+                            userId1 = (int)reader["id"];
+                        }
                     }
-                    else
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            string query2 = "SELECT id FROM speler WHERE naam = '" + Naam2 + "'";
+            using (MySqlConnection connection2 = new MySqlConnection())
+            {
+                connection2.ConnectionString = DatabaseSettings.Connectionstring;
+                using (MySqlCommand command2 = new MySqlCommand(query2, connection2))
+                {
+                    connection2.Open();
+                    MySqlDataReader reader2 = command2.ExecuteReader();
+                    if (reader2.HasRows)
                     {
-                        SelectedA.BackColor = CorrectColor;
-                        CorrectInput = false;
-                        AftelNaarVolgende = defaultAftelNaarVolgende;
-                        IsCountingDown = true;
-                        IsGoedBeandwoord = false;
-                        AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
-                        progress();
+                        while (reader2.Read())
+                        {
+                            userId2 = (int)reader2["id"];
+                        }
+                    }
+                    reader2.Close();
+                    connection2.Close();
+                }
+            }
+
+
+
+            if(speler1heeftgoedandwoord == true)
+            {
+                string query3 = "SELECT sum(IsGoedBeandwoord) AS IsGoedBeandwoord FROM andwoordvs WHERE userId = " + userId1 + "";
+
+                using (MySqlConnection connection3 = new MySqlConnection())
+                {
+                    connection3.ConnectionString = DatabaseSettings.Connectionstring;
+                    using (MySqlCommand command3 = new MySqlCommand(query3, connection3))
+                    {
+                        connection3.Open();
+                        MySqlDataReader reader3 = command3.ExecuteReader();
+                        if (reader3.HasRows)
+                        {
+                            while (reader3.Read())
+                            {
+                                AantalGoedBeandwoordeVragen1 = Convert.ToInt32(reader3["IsGoedBeandwoord"]);
+
+                            }
+                        }
+                        reader3.Close();
+                        connection3.Close();
+                        AantalFouteVragen1 = aantalVragen - AantalGoedBeandwoordeVragen1;
+                    }
+                }
+            }
+            
+            if (speler2heeftgoedandwoord == true)
+            {
+                string query4 = "SELECT sum(IsGoedBeandwoord) AS IsGoedBeandwoord FROM andwoordvs WHERE userId = " + userId2 + "";
+
+                using (MySqlConnection connection4 = new MySqlConnection())
+                {
+                    connection4.ConnectionString = DatabaseSettings.Connectionstring;
+                    using (MySqlCommand command4 = new MySqlCommand(query4, connection4))
+                    {
+                        connection4.Open();
+                        MySqlDataReader reader4 = command4.ExecuteReader();
+                        if (reader4.HasRows)
+                        {
+                            while (reader4.Read())
+                            {
+                                AantalGoedBeandwoordeVragen2 = Convert.ToInt32(reader4["IsGoedBeandwoord"]);
+
+                            }
+                        }
+                        reader4.Close();
+                        connection4.Close();
+                        AantalFouteVragen2 = aantalVragen - AantalGoedBeandwoordeVragen2;
                     }
                 }
             }
