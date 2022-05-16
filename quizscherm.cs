@@ -61,7 +61,7 @@ namespace UitbereidingQuiz
 
 
         int strafTijdFouteVraag = 10;
-
+        int custom;
 
         // SETTINGS
         int QuestionAmount = 10;
@@ -70,6 +70,14 @@ namespace UitbereidingQuiz
         public quizscherm(bool QuizIsCustom, int tijdPerVraag, int strafseconde, int aantalvragen, string Naam)
         {
             IsQuizCustom = QuizIsCustom;
+            if (IsQuizCustom == true)
+            {
+                custom = 1;
+            }
+            else if (IsQuizCustom == false)
+            {
+                custom = 0;
+            }
             AantalVragenCustom = aantalvragen;
             secondenpervraag = tijdPerVraag;
             aantalstrafseconde = strafseconde;
@@ -466,7 +474,7 @@ namespace UitbereidingQuiz
                 AntwoordOpVraag = 0;
             }
 
-            string query = "INSERT INTO andwoord (userId, vraagId, tijd, strafTijd, IsGoedBeandwoord, datum) VALUES ('" + userId + "', '" + vraagId + "', '" + tijd + "', '" + strafTijd + "', '" + AntwoordOpVraag + "', now())";
+            string query = "INSERT INTO andwoord (userId, vraagId, tijd, strafTijd, IsGoedBeandwoord, datum, custom) VALUES ('" + userId + "', '" + vraagId + "', '" + tijd + "', '" + strafTijd + "', '" + AntwoordOpVraag + "', now(), " + custom + ")";
 
 
             using (MySqlConnection connection = new MySqlConnection())

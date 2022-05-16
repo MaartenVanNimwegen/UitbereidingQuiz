@@ -43,6 +43,8 @@ namespace UitbereidingQuiz
         int aantathuidigestrafseconde;
         int aantatstrafseconde;
         int antwoordint;
+        int fout1;
+        int fout2;
 
         bool TimerPlaying = false;
         bool AcceptingInput = false;
@@ -418,6 +420,7 @@ namespace UitbereidingQuiz
                             AftelNaarVolgende = defaultAftelNaarVolgende;
                             IsCountingDown = true;
                             IsGoedBeandwoord = false;
+                            fout1 = fout1 + 1;
                             puntenSpeler2 = puntenSpeler2 + 10;
                             setlabels();
                             AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
@@ -458,6 +461,7 @@ namespace UitbereidingQuiz
                             AftelNaarVolgende = defaultAftelNaarVolgende;
                             IsCountingDown = true;
                             IsGoedBeandwoord = false;
+                            fout1 = fout1 + 1;
                             puntenSpeler2 = puntenSpeler2 + 10;
                             setlabels();
                             AntwoordOpslaan(idSpeler1, vraagId, IsGoedBeandwoord);
@@ -501,6 +505,7 @@ namespace UitbereidingQuiz
                             AftelNaarVolgende = defaultAftelNaarVolgende;
                             IsCountingDown = true;
                             IsGoedBeandwoord = false;
+                            fout2 = fout2 + 1;
                             puntenSpeler1 = puntenSpeler1 + 10;
                             setlabels();
                             AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
@@ -541,6 +546,7 @@ namespace UitbereidingQuiz
                             AftelNaarVolgende = defaultAftelNaarVolgende;
                             IsCountingDown = true;
                             IsGoedBeandwoord = false;
+                            fout2 = fout2 + 1;
                             puntenSpeler1 = puntenSpeler1 + 10;
                             setlabels();
                             AntwoordOpslaan(idSpeler2, vraagId, IsGoedBeandwoord);
@@ -570,7 +576,7 @@ namespace UitbereidingQuiz
                     else
                     {
                         CheckAantalVragen();
-                        resultatenvs myForm = new resultatenvs(Naam1, Naam2, AantalGoedBeandwoordeVragen1, AantalGoedBeandwoordeVragen2, AantalFouteVragen1, AantalFouteVragen2);
+                        resultatenvs myForm = new resultatenvs(Naam1, Naam2, AantalGoedBeandwoordeVragen1, AantalGoedBeandwoordeVragen2, fout1, fout2);
                         myForm.ShowDialog();
                         Close();
                     }

@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AntwoordenClass.cs" />
+    <Compile Include="AntwoordenClassvs.cs" />
     <Compile Include="customquizconfig.cs">
       <SubType>Form</SubType>
     </Compile>
