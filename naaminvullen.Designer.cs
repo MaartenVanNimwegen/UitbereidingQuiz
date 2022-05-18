@@ -81,7 +81,7 @@ namespace UitbereidingQuiz
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "naaminvullen";
+            this.Text = "Vul uw naam in";
             this.ResumeLayout(false);
             this.PerformLayout();
 

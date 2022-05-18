@@ -23,10 +23,10 @@ namespace UitbereidingQuiz
 
             Speler1NaamLabel.Text = naam1;
             Speler2NaamLabel.Text = naam2;
-            GoedBeantwoordeVragen1.Text = goed1.ToString();
-            GoedBeantwoordeVragen2.Text = goed2.ToString();
-            FoutBeantwoordeVragen1.Text = fout1.ToString();
-            FoutBeantwoordeVragen2.Text = fout2.ToString();
+            GoedBeantwoordeVragen1.Text = "Goed: " + goed1.ToString();
+            GoedBeantwoordeVragen2.Text = "Goed: " + goed2.ToString();
+            FoutBeantwoordeVragen1.Text = "Fout: " + fout1.ToString();
+            FoutBeantwoordeVragen2.Text = "Fout: " + fout2.ToString();
             TotaleScoreLabel1.Text = "Totaal: " + totaalstring1;
             TotaleScoreLabel2.Text = "Totaal: " + totaalstring2;
 

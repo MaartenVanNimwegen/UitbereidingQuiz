@@ -13,6 +13,7 @@ namespace UitbereidingQuiz
 {
     public partial class EenvsEenQuizscmer : Form
     {
+        // Hieronder staan alle variabelen gesorteerd op type
         string Naam1;
         string Naam2;
         string Naamvs;
@@ -46,6 +47,7 @@ namespace UitbereidingQuiz
         int fout1;
         int fout2;
 
+        bool isdebeurtgekaapt = false;
         bool TimerPlaying = false;
         bool AcceptingInput = false;
         bool HasGivenInput = false;
@@ -64,7 +66,16 @@ namespace UitbereidingQuiz
         Color CorrectColor = Color.FromArgb(54, 183, 47);
         Color SelectedColor = Color.FromArgb(234, 228, 171);
         Color DefaultColor = Color.FromArgb(41, 76, 146);
-
+        /// <summary>
+        /// Dit is de functie die de quiz start, bij het openen van het scherm worden de hieronder genoemde gegevens meegestuurt en op basis hiervan wordt de quiz geconfigureerd.
+        /// </summary>
+        /// <param name="QuizIsCustom"></param>
+        /// <param name="AantalVragen"></param>
+        /// <param name="TijdPerVraag"></param>
+        /// <param name="StrafTijd"></param>
+        /// <param name="naam1"></param>
+        /// <param name="naam2"></param>
+        /// <param name="naamvs"></param>
         public EenvsEenQuizscmer(bool QuizIsCustom, int AantalVragen, int TijdPerVraag, int StrafTijd, string naam1, string naam2, string naamvs)
         {
             InitializeComponent();
@@ -81,6 +92,13 @@ namespace UitbereidingQuiz
             AskQuestion(Questions[QuestionsCurrentListIndex], QuestionsCurrentListIndex);
 
         }
+        /// <summary>
+        /// Hier wordt een lijst met nummers gemaakt, dit is de lijst met vragen ids
+        /// </summary>
+        /// <param name="Amount"></param>
+        /// <param name="Start"></param>
+        /// <param name="End"></param>
+        /// <returns></returns>
         private List<int> NewNumber(int Amount, int Start, int End)
         {
 
@@ -99,6 +117,11 @@ namespace UitbereidingQuiz
 
             return randomList;
         }
+        /// <summary>
+        /// Deze functie kiest een vraag en wijst het goede en foute antwoord toe aan a of b.
+        /// </summary>
+        /// <param name="Question"></param>
+        /// <param name="QIndex"></param>
         private void AskQuestion(VraagClass Question, int QIndex)
         {
             VraagNummer++;
@@ -136,6 +159,9 @@ namespace UitbereidingQuiz
             TimerPlaying = true;
             AcceptingInput = true;
         }
+        /// <summary>
+        /// Hier worden de labels terug naar de originele kleur terug gezet
+        /// </summary>
         private void ResetColors()
         {
             AnswerA.BackColor = DefaultColor;
@@ -168,6 +194,11 @@ namespace UitbereidingQuiz
 
             return Rid;
         }
+        /// <summary>
+        /// Deze functie haalt alle vragen op uit de database en voert deze in in een lijst
+        /// </summary>
+        /// <param name="Amount"></param>
+        /// <returns></returns>
         private List<VraagClass> GetQuestions(int Amount)
         {
             string query = "SELECT * FROM vragen";
@@ -209,7 +240,11 @@ namespace UitbereidingQuiz
 
             return SortedQuestions;
         }
-
+        /// <summary>
+        /// Deze functie vraagt op je zeker weet dat je de quiz wilt sluiten en sluit hem bij ja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackBtn_Click(object sender, EventArgs e)
         {
             string message = "Weet je zeker dat je de quiz wilt beëindigen? Je scores zullen verloren raken.";
@@ -221,6 +256,9 @@ namespace UitbereidingQuiz
                 Close();
             }
         }
+        /// <summary>
+        /// Hier wordt de naam van de spelers in het label geplaats samen met de punten
+        /// </summary>
         private void setlabels()
         {
             NaamSpeler1.Text = Naam1;
@@ -228,6 +266,11 @@ namespace UitbereidingQuiz
             PuntenSpeler1.Text = puntenSpeler1.ToString();
             PuntenSpeler2.Text = puntenSpeler2.ToString();
         }
+        /// <summary>
+        /// Deze timer doet verschillende dingen maar de mail objective is dat als je niet optijd antwoord dat de vraag dan wordt fout gerekend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GlobalTimer_Tick(object sender, EventArgs e)
         {
             if (TimerPlaying == true)
@@ -278,6 +321,12 @@ namespace UitbereidingQuiz
                 progress();
             }
         }
+        /// <summary>
+        /// Hier wordt het gegeven antwoord opgeslagen met de megegeven gegevens.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="vraagId"></param>
+        /// <param name="antwoord"></param>
         private void AntwoordOpslaan(int userId, int vraagId, bool antwoord)
         { 
             if(antwoord == true)
@@ -303,6 +352,9 @@ namespace UitbereidingQuiz
                 }
             }
         }
+        /// <summary>
+        /// Deze update de progress bar
+        /// </summary>
         public void progress()
         {
             int Step = 100 / aantalVragen;
@@ -310,6 +362,11 @@ namespace UitbereidingQuiz
             progressBar.Step = Step;
             progressBar.Value = Step * VraagNummer;
         }
+        /// <summary>
+        /// Deze haalt de naam van speler 1 op uit de database
+        /// </summary>
+        /// <param name="Naam1"></param>
+        /// <returns></returns>
         int GetIdByName1(string Naam1)
         {
             string query = "SELECT id FROM speler WHERE naam = '" + Naam1 + "'";
@@ -335,6 +392,11 @@ namespace UitbereidingQuiz
 
             return idSpeler1;
         }
+        /// <summary>
+        /// Deze haalt de naam van speler 2 op uit de database
+        /// </summary>
+        /// <param name="Naam2"></param>
+        /// <returns></returns>
         int GetIdByName2(string Naam2)
         {
             string query = "SELECT id FROM speler WHERE naam = '" + Naam2 + "'";
@@ -360,6 +422,11 @@ namespace UitbereidingQuiz
 
             return idSpeler2;
         }
+        /// <summary>
+        /// Bij een keypress wordt er als eerst gekeken naar of a of b. Als het a is krijgt speler a de beurt. Hierna wordt er gekeken naar arrow up en down. Bij arrow up geef je antwoord a en bij down geef je b. Dan worden de label kleuren geupdate en de punten toegekend.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void EenvsEenQuizscerm_KeyDown(object sender, KeyEventArgs e)
         {
             GetIdByName1(Naam1);
@@ -368,18 +435,20 @@ namespace UitbereidingQuiz
 
             if (AcceptingInput)
             {
-                if (e.KeyCode == Keys.A)
+                if (e.KeyCode == Keys.A && isdebeurtgekaapt == false)
                 {
                     beurtspeler1 = true;
                     beurtspeler2 = false;
+                    isdebeurtgekaapt = true;
                     NaamSpeler1.ForeColor = Color.Green;
                     NaamSpeler2.ForeColor = Color.Red;
 
                 }
-                else if (e.KeyCode == Keys.B)
+                else if (e.KeyCode == Keys.B && isdebeurtgekaapt == false)
                 {
                     beurtspeler2 = true;
                     beurtspeler1 = false;
+                    isdebeurtgekaapt = true;
                     NaamSpeler2.ForeColor = Color.Green;
                     NaamSpeler1.ForeColor = Color.Red;
                 }
@@ -389,6 +458,7 @@ namespace UitbereidingQuiz
                     if (e.KeyCode == Keys.Up)
                     {
                         HasGivenInput = true;
+                        isdebeurtgekaapt = false;
                         AnswerA.ForeColor = SelectedColor;
                         ALetter.ForeColor = SelectedColor;
                         SelectedA.BackColor = SelectedColor;
@@ -430,6 +500,7 @@ namespace UitbereidingQuiz
                     else if (e.KeyCode == Keys.Down)
                     {
                         HasGivenInput = true;
+                        isdebeurtgekaapt = false;
                         AnswerB.ForeColor = SelectedColor;
                         BLetter.ForeColor = SelectedColor;
                         SelectedB.BackColor = SelectedColor;
@@ -474,6 +545,7 @@ namespace UitbereidingQuiz
                     if (e.KeyCode == Keys.Up)
                     {
                         HasGivenInput = true;
+                        isdebeurtgekaapt = false;
                         AnswerA.ForeColor = SelectedColor;
                         ALetter.ForeColor = SelectedColor;
                         SelectedA.BackColor = SelectedColor;
@@ -515,6 +587,7 @@ namespace UitbereidingQuiz
                     else if (e.KeyCode == Keys.Down)
                     {
                         HasGivenInput = true;
+                        isdebeurtgekaapt = false;
                         AnswerB.ForeColor = SelectedColor;
                         BLetter.ForeColor = SelectedColor;
                         SelectedB.BackColor = SelectedColor;
@@ -556,6 +629,11 @@ namespace UitbereidingQuiz
                 }
             }
         }
+        /// <summary>
+        /// na het geven van een antwoord heb je 3 seconden en dan komt de volgende vraag. als er verder geen vragen meer zijn opent het resultaten scherm.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AftelTimerVolgendeVraag_Tick(object sender, EventArgs e)
         {
             if (HasGivenInput == true && IsCountingDown == true)
@@ -583,6 +661,9 @@ namespace UitbereidingQuiz
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void CheckAantalVragen()
         {
             string query = "SELECT id FROM speler WHERE naam = '" + Naam1 + "'";

@@ -149,6 +149,7 @@ namespace UitbereidingQuiz
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "vraagwijzigen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "vraagwijzigen";
             ((System.ComponentModel.ISupportInitialize)(this.WijzigenBtn)).EndInit();
             this.ResumeLayout(false);

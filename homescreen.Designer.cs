@@ -134,7 +134,7 @@ namespace UitbereidingQuiz
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -153,7 +153,7 @@ namespace UitbereidingQuiz
             this.panel1.Controls.Add(this.QuizApplicatieLable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 125);
             this.panel1.TabIndex = 6;
@@ -196,7 +196,7 @@ namespace UitbereidingQuiz
             this.QuizApplicatieLable.Name = "QuizApplicatieLable";
             this.QuizApplicatieLable.Size = new System.Drawing.Size(1288, 74);
             this.QuizApplicatieLable.TabIndex = 7;
-            this.QuizApplicatieLable.Text = "Quiz Applicatie";
+            this.QuizApplicatieLable.Text = "Quizapplicatie";
             this.QuizApplicatieLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // homescreen
